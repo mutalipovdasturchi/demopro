@@ -1,11 +1,49 @@
-// 1000+ KITOB GENERATSIYA QILISH
-const books = [];
+// REAL KITOB NOMLARI
+const bookNames = [
+"Alkimyogar",
+"O'tkan kunlar",
+"Mehrobdan chayon",
+"Sariq devni minib",
+"Ufq",
+"Dunyoning ishlari",
+"Boburnoma",
+"Temur tuzuklari",
+"Ikki eshik orasi",
+"Qasos",
+"Urush va tinchlik",
+"Jinoyat va jazo",
+"Anna Karenina",
+"Otello",
+"Hamlet",
+"Romeo va Julietta",
+"Cho‘lpon she'rlari",
+"Kecha va kunduz",
+"Sherlok Holms",
+"Don Kixot",
+"Yulduzli tunlar",
+"Qirq kunlik",
+"Oq kema",
+"Chol va dengiz",
+"1984",
+"Hayvonlar xo‘jaligi",
+"Farg‘ona tongi",
+"Shum bola",
+"Bahor qaytmaydi",
+"Tungi mehmon"
+];
 
-for(let i = 1; i <= 1200; i++){
-    books.push({
-        id: i,
-        name: "Kitob " + i,
-        img: "https://picsum.photos/200?random=" + i
+// 1000+ KITOB GENERATSIYA
+const books = [];
+let idCounter = 1;
+
+for(let i = 0; i < 40; i++){   // 40 x 30 = 1200 ta
+    bookNames.forEach(name=>{
+        books.push({
+            id: idCounter,
+            name: name + " (" + (i+1) + ")",
+            img: "https://picsum.photos/200?random=" + idCounter
+        });
+        idCounter++;
     });
 }
 
@@ -64,7 +102,6 @@ function reserve(id){
         return;
     }
 
-    // Agar oldin band qilingan bo‘lsa
     if(reserved.some(r => r.id === id)){
         alert("Bu kitob allaqachon band qilingan!");
         return;
@@ -80,11 +117,10 @@ function reserve(id){
     alert(book.name + " " + days + " kunga band qilindi!");
 }
 
-// BAND QILINGANLAR SAHIFASI
+// BAND QILINGANLAR
 function showReserved(){
     document.getElementById("mainPage").classList.add("hidden");
     document.getElementById("reservedPage").classList.remove("hidden");
-
     renderReserved();
 }
 
@@ -111,7 +147,7 @@ function renderReserved(){
     document.getElementById("reservedList").innerHTML=html;
 }
 
-// BANDNI BEKOR QILISH
+// BEKOR QILISH
 function cancelReserve(id){
     reserved = reserved.filter(r => r.id !== id);
     renderReserved();
@@ -136,4 +172,3 @@ setInterval(()=>{
     adIndex=(adIndex+1)%ads.length;
     document.getElementById("ad").innerText=ads[adIndex];
 },3000);
-
