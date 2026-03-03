@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>37-Maktab Kutubxonasi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage" class="container">
+    <h2>37-Maktab Kutubxonasi</h2>
+    <input type="text" id="login" placeholder="Login">
+    <input type="password" id="password" placeholder="Parol">
+    <button onclick="login()">Kirish</button>
+    <p id="error" class="error"></p>
+</div>
+
+<!-- ASOSIY SAHIFA -->
+<div id="mainPage" class="hidden">
+
+<header>
+    <button onclick="showReserved()">Keyingi oyna</button>
+    <h3>Kutubxona</h3>
+</header>
+
+<div class="container">
+
+<input type="text" id="search" placeholder="Kitob qidirish..." onkeyup="searchBook()">
+
+<div id="ad"></div>
+
+<div class="books" id="bookList"></div>
+
+</div>
+</div>
+
+<!-- BAND QILINGANLAR -->
+<div id="reservedPage" class="hidden">
+<header>
+    <button onclick="back()">Orqaga</button>
+    <h3>Band qilingan kitoblar</h3>
+</header>
+
+<div class="container">
+    <div id="reservedList"></div>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
