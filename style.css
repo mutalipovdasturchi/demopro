@@ -112,3 +112,12 @@ button:hover{
     transform:scale(0.95);
 }
 }
+.cancel-btn{
+    background:linear-gradient(135deg, #dc3545, #a71d2a);
+    margin-top:8px;
+}
+
+.cancel-btn:hover{
+    background:linear-gradient(135deg, #ff4d4d, #c82333);
+}
+
